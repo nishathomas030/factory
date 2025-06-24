@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="login-card">
+      <h2><img src="log.png" alt="Logo"></h2>
+      <h3>Enter your credentials</h3>
+      <form class="login-form" action="login.php" method="post" onsubmit="return validate()">
+        <input type="text" placeholder="Username" id="username">
+        <input type="password" placeholder="Password" id="password">
+        <a href="client_reg.html">Register Here</a>
+        <input class="Login" type="submit" value="SignIn">
+        <a href="index.html">Go Back</a>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  function validate() {
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+
+    if (username === "" || username === null) {
+      alert("Enter your username");
+      return false;
+    }
+
+    if (password.length <= 5) {
+      alert("Valid password required.");
+      return false; 
+      
+    } else {
+      alert("Login successful.");
+      
+     
+      window.location.href = "content1.html"; 
+      return false; 
+    }
+  }
+</script>

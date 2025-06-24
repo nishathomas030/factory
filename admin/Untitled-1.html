@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Book</title>
+    <style>
+      body {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  background: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding-top: 60px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px;
+  border-radius: 16px;
+  width: 400px;
+}
+
+.main-btn {
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 25px 50px;
+  font-size: 30px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  margin-bottom: 0; /* remove spacing below */
+}
+
+.main-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.popup-buttons {
+  display: none;
+  flex-direction: row; /* horizontal layout */
+  gap: 12px;
+  margin-top: 0; /* remove top margin */
+  padding: 10px 20px;
+  background-image: url(leaf1.jpg);
+  background-size: cover;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-buttons button {
+  background-color: #1a2238;
+  color: #fff;
+  font-size: 20px;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.popup-buttons button:hover {
+  background-color: #323f4d;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <button class="main-btn" onclick="togglePopup('import')">Import</button>
+        <div class="popup-buttons" id="importPopup">
+          <a href="Milk(add&view).html"><button>Milk</button></a>
+          <a href="Drum(add&view).html"><button>Drum</button></a>
+        </div>
+      
+        <button class="main-btn" onclick="togglePopup('export')">Export</button>
+        <div class="popup-buttons" id="exportPopup">
+          <a href="eDrum(add&view).html"><button>Drum</button></a>
+        </div>
+      
+        <button class="main-btn" onclick="togglePopup('balance')">Balance</button>
+        <div class="popup-buttons" id="balancePopup">
+          <a href="Milk(add&view).html"><button>Milk</button></a>
+          <a href="Drum(add&view).html"><button>Drum</button></a>
+        </div>
+      </div>
+          <script>
+      function togglePopup(buttonType) {
+        const clickedPopup = document.getElementById(buttonType + "Popup");
+        const isVisible = clickedPopup.style.display === "flex";
+
+        // Hide all popups first
+        document.querySelectorAll(".popup-buttons").forEach((popup) => {
+          popup.style.display = "none";
+        });
+
+        // Show clicked popup only if it was previously hidden
+        if (!isVisible) {
+          clickedPopup.style.display = "flex";
+        }
+      }
+    </script>
+  </body>
+</html>

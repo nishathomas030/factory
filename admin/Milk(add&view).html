@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check list</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f8f9fa; /* Light background for contrast */
+        background-image: url(add1.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+      }
+
+      .container {
+       /* background-color: #1a2238;  Dark navy background */
+        border-radius: 12px;
+        padding: 250px 200px;
+        border-top-left-radius: 120px;
+        border-bottom-right-radius: 120px;
+        display: flex;
+        gap: 20px;
+       
+      }
+
+      .container button {
+        background-color: #fff; /* White button background */
+        background-image: url(leaf1.jpg);
+        border: none;
+        border-radius: 8px;
+        padding: 40px 80px;
+        font-size: 35px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        color: #000; /* Black text color */
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .container button:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .container button:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      #goback {
+    position: fixed; /* stays fixed even if page scrolls */
+    left: 10px; /* distance from left */
+    top: 50%; /* center vertically */
+    transform: translateY(-50%);
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+    <a href="content.html"><button id="goback"><</button></a>
+          <div class="container">
+      <button onclick="window.location.href='milk_add.php'">Add</button>
+
+      <button onclick="window.location.href='milk_view.php'">View</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<?php
+include '../db.php';
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $query = "DELETE FROM drum_collection WHERE id = $id";
+    if (mysqli_query($conn, $query)) {
+        echo "<script>alert('Record deleted successfully!'); window.location.href='drum_view.php';</script>";
+    } else {
+        echo "<script>alert('Error deleting record'); window.location.href='drum_view.php';</script>";
+    }
+}
+
+mysqli_close($conn);
+?>
